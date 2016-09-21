@@ -1,5 +1,5 @@
-#ifndef CONFIG_REDFOX_H
-#define CONFIG_REDFOX_H
+#ifndef CONFIG_TVOLLSTAEDT_H
+#define CONFIG_TVOLLSTAEDT_H
 
 #include "../../config.h"
 
