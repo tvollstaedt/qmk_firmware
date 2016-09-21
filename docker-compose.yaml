@@ -1,0 +1,7 @@
+version: '2'
+services:
+  root:
+    image: edasque/qmk_firmware
+    command: make keyboard=ergodox keymap=tvollstaedt
+    volumes:
+      - .:/qmk
