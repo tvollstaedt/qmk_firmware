@@ -31,6 +31,16 @@ typedef  uint32_t   matrix_row_t;
 #error "MATRIX_COLS: invalid value"
 #endif
 
+#if (MATRIX_ROWS <= 8)
+typedef  uint8_t    matrix_col_t;
+#elif (MATRIX_ROWS <= 16)
+typedef  uint16_t   matrix_col_t;
+#elif (MATRIX_ROWS <= 32)
+typedef  uint32_t   matrix_col_t;
+#else
+#error "MATRIX_ROWS: invalid value"
+#endif
+
 #define MATRIX_IS_ON(row, col)  (matrix_get_row(row) && (1<<col))
 
 
@@ -50,7 +60,7 @@ void matrix_init(void);
 uint8_t matrix_scan(void);
 /* whether modified from previous scan. used after matrix_scan. */
 bool matrix_is_modified(void) __attribute__ ((deprecated));
-/* whether a swtich is on */
+/* whether a switch is on */
 bool matrix_is_on(uint8_t row, uint8_t col);
 /* matrix state on row */
 matrix_row_t matrix_get_row(uint8_t row);
